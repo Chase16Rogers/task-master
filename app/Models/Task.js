@@ -3,11 +3,11 @@ import { generateId } from "../Utils/GenerateId.js"
 
 
 export default class Task {
-  constructor({ task, parent, id }) {
+  constructor({ task, parent, Id, checked }) {
     this.task = task
-    this.Id = id || generateId()
+    this.Id = Id || generateId()
     this.parent = parent
-    this.checked = 0
+    this.checked = checked || 0
   }
 
   get Template() {

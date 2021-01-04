@@ -4,12 +4,12 @@ import { generateId } from "../Utils/GenerateId.js"
 
 
 export default class List {
-  constructor({ name, color, id }) {
+  constructor({ name, color, Id, completed, taskCount }) {
     this.name = name
     this.color = color
-    this.taskCount = 0
-    this.completed = 0
-    this.Id = id || generateId()
+    this.taskCount = taskCount || 0
+    this.completed = completed || 0
+    this.Id = Id || generateId()
     console.log(this.Id)
   }
 
