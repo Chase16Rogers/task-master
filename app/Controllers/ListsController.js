@@ -27,6 +27,7 @@ export default class ListsController {
     console.log(ProxyState.lists)
     let list = new List(newList)
     ProxyState.lists = [...ProxyState.lists, list]
+    saveState()
     _drawLists()
     form.reset()
   }
@@ -43,7 +44,7 @@ export default class ListsController {
       ProxyState.lists[list].completed--
     }
 
-
+    saveState()
     _drawLists()
   }
 
@@ -51,6 +52,7 @@ export default class ListsController {
     let deleteList = ProxyState.lists.filter(l => l.Id != id)
     console.log(deleteList)
     ProxyState.lists = deleteList
+    saveState()
   }
 
 }

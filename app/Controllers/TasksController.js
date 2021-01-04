@@ -22,12 +22,14 @@ export default class TasksController {
     console.log(ProxyState.tasks)
     let parent = ProxyState.lists.findIndex(l => l.Id == id)
     ProxyState.lists[parent].taskCount++
+    saveState()
     _drawLists()
   }
 
   deleteTask(id) {
     if (window.confirm("Confirm Delete? This cannot be undone!")) {
       ProxyState.tasks = ProxyState.tasks.filter(t => id != t.Id)
+      saveState()
       _drawLists()
     }
   }
